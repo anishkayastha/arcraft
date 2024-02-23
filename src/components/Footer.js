@@ -77,7 +77,7 @@ const footerContent = {
                 },
                 {
                     href: "#",
-                    label: "Knowledge"
+                    label: "Knowledge base"
                 },
                 {
                     href: "#",
@@ -101,7 +101,7 @@ const Copyright = () => {
                 . All rights reserved. Created with {" "}
                 <BiSolidHeart className='text-red-500 mx-1 inline-block' />
                 by{" "}
-                <Link href="https://www.linkedin.com/in/chinedu-nwafor-1121a9273/" target='_blank' className='text-violet-300'>Ricky</Link>
+                <Link href="/" target='_blank' className='text-violet-300'>Anish</Link>
             </p>
         </div>
     )
@@ -119,7 +119,7 @@ const Footer = ({ className }) => {
                         </Link>
                     </div>
 
-                    <div className='md:8/12'>
+                    <div className='md:w-8/12'>
                         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3'>
                             {footerContent.footerLinks.map((item, idx) => (
                                 <div className='mb-10 md:mb-0' key={item.heading}>
