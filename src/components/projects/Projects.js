@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { allProjects } from "contentlayer/generated";
 import { compareDesc } from "date-fns";
-import ReactPaginate from "framer-motion";
+import ReactPaginate from "react-paginate";
 
 import { motion } from "framer-motion";
 
@@ -31,7 +31,7 @@ const Items = ({ currentItems }) => {
 
                                 <Image
                                     src={project.image}
-                                    alt={joefreycodes.com}
+                                    alt="joefreycodes.com"
                                     width={1064}
                                     height={644}
                                     className="object-cover object-center h-[400px] !max-w-full duration-300 transition-all ease-in-out group-hover:scale-[1.05]"
@@ -84,8 +84,35 @@ const Projects = ({ className, itemsPerPage }) => {
     return (
         <section className={`${className}`} ref={ref}>
             <div className="container px-4 mx-auto">
+                <div className="lg:w-10/12 mx-auto flex flex-wrap mb-10">
+                    <Items currentItems={currentItems} />
+                </div>
+
+                <div className="lg:w-10/12 mx-auto flex flex-wrap">
+                    <ReactPaginate
+                        nextLabel="Next"
+                        onePageChange={handlePageClick}
+                        pageRangeDisplayed={3}
+                        marginPagesDisplayed={2}
+                        pageCount={pageCount}
+                        previousLabel="Previous"
+                        pageClassName="page-item"
+                        pageLinkClassName="page-link"
+                        previousClassName="page-item"
+                        previousLinkClassName="page-link"
+                        nextClassName="page-item"
+                        nextLinkClassName="page-link"
+                        breakLabel="..."
+                        breakClassName="page-item"
+                        breakLinkClassName="page-link"
+                        containerClassName="pagination"
+                        activeClassName="active"
+                        renderOnZeroPageCount={null}
+                    />
+                </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
+export default Projects;

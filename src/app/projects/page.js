@@ -5,8 +5,6 @@ import Projects from '@/components/projects/Projects';
 import CTA from '@/components/CTA';
 import Image from 'next/image';
 
-
-
 export const metadata = {
     title: "Projects - Arcraft"
 }
