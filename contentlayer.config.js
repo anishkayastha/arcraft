@@ -6,7 +6,7 @@ import {
 
 const Post = defineDocumentType(() => ({
     name: "Post",
-    filePathPattern: `blog/*mdx`,
+    filePathPattern: `blog/*.mdx`,
     contentType: "mdx",
     fields: {
         title: {
@@ -61,7 +61,7 @@ const Category = defineNestedType(() => ({
 }));
 
 const Project = defineDocumentType(() => ({
-    name: "Projects",
+    name: "Project",
     filePathPattern: `projects/*.mdx`,
     contentType: "mdx",
     fields: {

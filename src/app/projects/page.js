@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import React from 'react';
 import Link from 'next/link';
 import Hero from '@/components/about/Hero';
@@ -6,13 +7,13 @@ import CTA from '@/components/CTA';
 import Image from 'next/image';
 
 export const metadata = {
-    title: "Projects - Arcraft"
-}
+    title: "Projects | Arcraft"
+};
 
 function page() {
     return (
         <>
-            <Hero className="pt-52 pb-24" title="Projects" subtitle="Our Projects" />
+            <Hero className="pt-52 pb-24" title="Projects" subTitle="Our Projects" />
             <Projects className="pt-0 pb-52" itemsPerPage={4} />
             <CTA
                 className="py-32 lg:py-32 bg-violet-600"

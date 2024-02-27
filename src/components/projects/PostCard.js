@@ -22,7 +22,7 @@ const PostCard = ({project, index}) => {
                 className={`relative overflow-hidden`}
             >
 
-                <Link href={project.url} className="relative block border border-red-600 overflow-hiddden group">
+                <Link href={project.url} className="relative block overflow-hiddden group">
                     <Image
                         src={project.image}
                         alt={project.title}

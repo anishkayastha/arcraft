@@ -15,11 +15,11 @@ const ProjectContent = ({ project }) => {
   let MDXContent;
 
   if (!projects) return null;
-    console.log('Post not found');
+    
   if (!project) {
-    MDXContent = getMDXComponent(project.body.code);
+    console.log('Post not found');
   } else {
-
+    MDXContent = getMDXComponent(project.body.code);
   }
   
   return (
@@ -35,17 +35,18 @@ const ProjectContent = ({ project }) => {
     >
         <div className='mx-auto max-w-4xl'>
             <div className='text-center mb-16 max-w-4xl mx-auto'>
-                <h1 className="text-slate-900 text-center mb-16 max-w-4xl mx-auto">{project.title}</h1>
+                <h1 className="text-slate-900 text-center text-4xl/none lg:text-6xl/none font-medium">{project.title}</h1>
                 <p className='text-slate-500 mt-10'>
-                    <span className='inline-flex space-x-3'></span>
-                    <span>{ format(parseISO(project.date), "LLL d, yyyy") }</span>
-                    <span>*</span>
-                    <span>{ project.role }</span>
+                    <span className='inline-flex space-x-3'>
+                        <span>{ format(parseISO(project.date), "LLL d, yyyy") }</span>
+                        <span>•</span>
+                        <span>{ project.role }</span>
+                    </span>
                 </p>
             </div>
 
             <div className="mb-16">
-                <Image src={project.iamge} width={1065} height={644} className='object-cover object-top' alt={project.title} />
+                <Image src={project.image} width={1065} height={644} className='object-cover object-top' alt={project.title} />
             </div>
 
             <article className="prose mx-auto max-w-2xl">
@@ -76,7 +77,7 @@ const ProjectContent = ({ project }) => {
         <div className='max-w-4xl mx-auto mt-20 lg:mt-32'>
             <h2 className='text-2xl text-gray-700 mb-10'>More Projects</h2>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
-                {projects.filter((a) => project.title != a.title)
+                {projects.filter((a) => project.title !== a.title)
                     .map((item, idx) => {
                         if (idx > 2) return null;
                         return <PostCard key={idx} index={idx} project={item} />
